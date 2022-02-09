@@ -6,6 +6,13 @@ sudo apt-get -y update && sudo apt-get -y upgrade
 sudo apt-get -y install python3-pip
 pip3 install gns3-gui gns3-server
 
+# ubridge
+sudo apt-get install -y libpcap-dev
+git clone git@github.com:GNS3/ubridge.git
+make -C ubridge
+sudo make -C ubridge install
+rm -rf ubridge
+
 # Docker
 curl -fsSL https://download.docker.com/linux/debian/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
 echo \

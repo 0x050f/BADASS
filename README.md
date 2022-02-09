@@ -3,10 +3,10 @@ Bgp At Doors of Autonomous Systems is Simple
 
 # Setup VM
 
-## VirtualBox
+ParrotOS
 ```
-wget https://altushost-swe.dl.sourceforge.net/project/osboxes/v/vb/18-F-d/35/Workstation/64bit.7z
-7z x 64bit.7z
+wget https://download.parrot.sh/parrot/iso/4.11.3/Parrot-home-4.11.3_virtual.ova
 ```
 
-## VMWare
+## Credentials
+`root:toor`

@@ -15,4 +15,6 @@ wget https://download.parrot.sh/parrot/iso/4.11.3/Parrot-home-4.11.3_virtual.ova
 
 ```
 sudo apt-get install openssh-server && systemctl restart ssh
+systemctl enable ssh
+systemctl restart ssh
 ```

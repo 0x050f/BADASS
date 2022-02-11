@@ -23,3 +23,8 @@ echo \
   $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 sudo apt-get -y update
 sudo apt-get -y install docker-ce docker-ce-cli containerd.io
+
+
+# Dynamips
+wget ppa.launchpad.net/gns3/ppa/ubuntu/pool/main/d/dynamips/dynamips_0.2.12-1~ppa1_amd64.deb
+dpkg -i dynamips_0.2.12-1~ppa1_amd64.deb

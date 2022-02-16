@@ -32,3 +32,4 @@ rm -rf dynamips_0.2.12-1~ppa1_amd64.deb
 
 # Wireshark
 sudo apt-get install -y wireshark
+sudo usermod -aG wireshark user

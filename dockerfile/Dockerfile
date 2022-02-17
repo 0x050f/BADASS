@@ -16,6 +16,10 @@ COPY ospfd.conf /etc/quagga/ospfd.conf
 COPY isisd.conf /etc/quagga/isisd.conf
 COPY start.sh /start.sh
 COPY router_ipconf.sh /router_ipconf.sh
+COPY FRR1 /FRR1
+COPY FRR2 /FRR2
+COPY FRR3 /FRR3
+COPY FRR4 /FRR4
 
 RUN chmod +x start.sh
 

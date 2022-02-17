@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sudo apt-get -y update && sudo apt-get -y upgrade
+sudo apt-get -y update && sudo apt-get -y upgrade && sudo apt-get autoremove -y
 
 # GNS3
 sudo apt-get -y install python3-pip
@@ -17,13 +17,13 @@ rm -rf ubridge
 sudo apt-get install -y xterm
 
 # Docker
+sudo rm -rf /usr/share/keyrings/docker-archive-keyring.gpg
 curl -fsSL https://download.docker.com/linux/debian/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
 echo \
   "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/debian \
   $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 sudo apt-get -y update
 sudo apt-get -y install docker-ce docker-ce-cli containerd.io
-
 
 # Dynamips
 wget ppa.launchpad.net/gns3/ppa/ubuntu/pool/main/d/dynamips/dynamips_0.2.12-1~ppa1_amd64.deb

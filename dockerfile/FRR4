@@ -8,7 +8,7 @@ brctl addif br0 eth0
 vtysh << script
 
 config t
-hostname frrr-4
+hostname router_lmartin-4
 no ipv6 forwarding
 !
 interface eth2

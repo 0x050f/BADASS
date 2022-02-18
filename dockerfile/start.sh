@@ -5,4 +5,6 @@
 /usr/sbin/ospfd -d
 /usr/sbin/isisd -d
 
+sh /$(hostname)
+
 tail -f /dev/null

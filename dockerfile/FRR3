@@ -1,3 +1,9 @@
+
+vtysh << script
+
+config t
+
+
 hostname frrr-3
 no ipv6 forwarding
 !
@@ -20,3 +26,4 @@ router bgp 1
 !
 router ospf
 !
+script

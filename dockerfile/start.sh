@@ -5,6 +5,7 @@
 /usr/sbin/ospfd -d
 /usr/sbin/isisd -d
 
+/usr/lib/frr/frrinit.sh start
 sh /$(hostname)
 
 tail -f /dev/null

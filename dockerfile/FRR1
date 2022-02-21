@@ -1,3 +1,6 @@
+vtysh << script
+
+config t
 hostname router_lmartin-1
 no ipv6 forwarding
 !
@@ -29,3 +32,4 @@ router ospf
 !
 line vty
 !
+script

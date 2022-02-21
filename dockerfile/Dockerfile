@@ -1,4 +1,4 @@
-FROM alpine:3.15 AS host
+FROM alpine:3.15.0 AS host
 
 RUN apk update && \
     apk upgrade && \
@@ -6,20 +6,23 @@ RUN apk update && \
 
 COPY host_ipconf.sh /host_ipconf.sh
 
-FROM host AS router
+FROM frrouting/frr:v8.1.0 AS router
+
+RUN apk update && \
+    apk upgrade && \
+    apk add busybox
+
+COPY vtysh.conf /etc/frr/vtysh.conf
+COPY daemons /etc/frr/daemons
 
 # (Check subject screenshot c:)
-RUN apk add quagga
 
-COPY bgpd.conf /etc/quagga/bgpd.conf
-COPY ospfd.conf /etc/quagga/ospfd.conf
-COPY isisd.conf /etc/quagga/isisd.conf
 COPY start.sh /start.sh
 COPY router_ipconf.sh /router_ipconf.sh
-COPY FRR1 /FRR1
-COPY FRR2 /FRR2
-COPY FRR3 /FRR3
-COPY FRR4 /FRR4
+COPY FRR1 /router_lmartin-1
+COPY FRR2 /router_lmartin-2
+COPY FRR3 /router_lmartin-3
+COPY FRR4 /router_lmartin-4
 
 RUN chmod +x start.sh
 

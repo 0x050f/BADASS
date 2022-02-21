@@ -1,4 +1,4 @@
-FROM frrouting/frr AS host
+FROM alpine:3.15.0 AS host
 
 RUN apk update && \
     apk upgrade && \
@@ -6,7 +6,11 @@ RUN apk update && \
 
 COPY host_ipconf.sh /host_ipconf.sh
 
-FROM host AS router
+FROM frrouting/frr:v8.1.0 AS router
+
+RUN apk update && \
+    apk upgrade && \
+    apk add busybox
 
 COPY vtysh.conf /etc/frr/vtysh.conf
 COPY daemons /etc/frr/daemons

@@ -1,4 +1,3 @@
-
 docker image rm router
 docker image rm host
 

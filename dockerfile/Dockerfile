@@ -15,13 +15,13 @@ RUN apk update && \
 COPY vtysh.conf /etc/frr/vtysh.conf
 COPY daemons /etc/frr/daemons
 
-# (Check subject screenshot c:)
-
 COPY start.sh /start.sh
+
+# P2
 COPY router_ipconf.sh /router_ipconf.sh
+
+# P3
 COPY spine_router.sh /spine_router.sh
 COPY leaf_router.sh /leaf_router.sh
-
-RUN chmod +x start.sh
 
 CMD ./start.sh

@@ -1,7 +1,7 @@
 vtysh << script
 
 config t
-hostname router_lmartin-1
+hostname $(echo $HOSTNAME)
 no ipv6 forwarding
 !
 interface eth0

@@ -8,16 +8,15 @@ brctl addif br0 eth0
 vtysh << script
 
 config t
-
-hostname router_lmartin-3
+hostname $HOSTNAME
 no ipv6 forwarding
 !
 interface eth1
- ip address 10.1.1.6/30
+ ip address 10.1.1.$(echo $HOSTNAME | sed 's|.*-||' | awk '{ print "(" $0 " - 2) * 4 + 2"}' | bc)/30
  ip ospf area 0
 !
 interface lo
- ip address 1.1.1.3/32
+ ip address 1.1.1.$(echo $HOSTNAME | sed 's|.*-||')/32
  ip ospf area 0
 !
 router bgp 1
@@ -30,5 +29,5 @@ router bgp 1
  exit-address-family
 !
 router ospf
-
+!
 script

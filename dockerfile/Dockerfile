@@ -19,10 +19,8 @@ COPY daemons /etc/frr/daemons
 
 COPY start.sh /start.sh
 COPY router_ipconf.sh /router_ipconf.sh
-COPY FRR1 /router_lmartin-1
-COPY FRR2 /router_lmartin-2
-COPY FRR3 /router_lmartin-3
-COPY FRR4 /router_lmartin-4
+COPY spine_router.sh /spine_router.sh
+COPY leaf_router.sh /leaf_router.sh
 
 RUN chmod +x start.sh
 

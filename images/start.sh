@@ -1,11 +1,14 @@
 #!/bin/sh
 
 /usr/lib/frr/frrinit.sh start
-if [ $(echo $HOSTNAME | sed 's|.*-||') -eq "1" ]
+if [[ $# == 0 ]]
 then
-  sh /spine_router.sh
-else
-  sh /leaf_router.sh
+  if [ $(echo $HOSTNAME | sed 's|.*-||') -eq "1" ]
+  then
+    sh /spine_router.sh
+  else
+    sh /leaf_router.sh
+  fi
 fi
 
 tail -f /dev/null

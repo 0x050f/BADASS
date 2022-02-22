@@ -18,7 +18,8 @@ COPY daemons /etc/frr/daemons
 COPY start.sh /start.sh
 
 # P2
-COPY router_ipconf.sh /router_ipconf.sh
+COPY router_static_ipconf.sh /router_ipconf.sh
+#COPY router_dynamic_ipconf.sh /router_ipconf.sh
 
 # P3
 COPY spine_router.sh /spine_router.sh

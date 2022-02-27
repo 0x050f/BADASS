@@ -7,7 +7,7 @@ ip link set dev br0 up
 # Set IP address to the Ethernet interface
 ip addr add 10.1.1.$(echo $HOSTNAME | sed 's|.*-||')/24 dev eth0
 
-# Create the VXLAN interface according to RFC 7348
+# Create the VXLAN interface according to RFC 7348 (DYNAMIC MULTICAST)
 ip link add name vxlan10 type vxlan id 10 dev eth0 group 239.1.1.1 dstport 4789
 
 # Set IP address to the VXLAN interface

@@ -3,9 +3,9 @@
 This network administration project consists in the simulation of a network using GNS3 and Docker images.
 
 The project runs on a Parrot Virtual Machine and is split in three parts:
-	- Basic configuration of GNS3 with a host and a router running from a Docker image.
-	- VXLAN network with dynamic multicast
-	- A datacenter-like network with BGP EVPN
+- Basic configuration of GNS3 with a host and a router running from a Docker image.
+- VXLAN network with dynamic multicast
+- A datacenter-like network with BGP EVPN
 
 ## VM installation
 
